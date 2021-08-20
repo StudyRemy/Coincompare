@@ -43,7 +43,7 @@ def printtofile(unique, exchange):
 
 binance = ccxt.binance()
 kucoin = ccxt.kucoin()
-huobi = ccxt.huobi()
+huobi = ccxt.huobipro()
 okex = ccxt.okex()
 coinbasepro = ccxt.coinbasepro()
 
