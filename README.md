@@ -1,6 +1,8 @@
 # Coincompare
 
 A script that compares the coins of a few different exchanges to see which coins are unique on an exchange (and thus an easier prey for pump & dump) to put in a blacklist.
+The result are blacklist files in .json-format for usage with the [Freqtrade](https://github.com/freqtrade/freqtrade) bot.  .
+
 
 It compares between (and only between) Binance, KuCoin, Huobi, Okex and Coinbase. So most of the biggest exchanges are covered.  
 
