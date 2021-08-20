@@ -45,7 +45,7 @@ def createstring(inputlist, currency=None):
 # prints the list to a file
 def printtofile(unique, exchange):
     original_stdout = sys.stdout
-    filename = "" + exchange + ".txt"
+    filename = "" + exchange + "-blacklist.json"
     with open(filename, 'w') as f:
         sys.stdout = f
         print(unique)
