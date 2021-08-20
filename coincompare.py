@@ -23,8 +23,18 @@ def uniqueinexchange(exchange, other1, other2, other3, other4):
     return list
 
 # creates a copy-pasteable list
-def createstring(inputlist, currency):
+def createstring(inputlist, currency=None):
     string = ""
+    if currency is None:
+        string += "\"("
+        for ind, item in enumerate(inputlist):
+            if item is inputlist[-1]:
+                string += item + ")/.*\""
+            elif ind!=0 and ind%10==0:
+                string += item + ")/.*\",\n\"("
+            else:
+                string += item + "|"
+        return string
     for item in inputlist:
         if item is not inputlist[-1]:
             string += "\"" + item + "/"+ currency + "\", \n"
