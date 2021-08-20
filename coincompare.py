@@ -22,9 +22,9 @@ def uniqueinexchange(exchange, other1, other2, other3, other4):
             list.append(item)
     return list
 
-# creates a copy-pasteable list
+# creates text for a ready to use blacklist.json
 def createstring(inputlist, currency=None):
-    string = ""
+    string = "{\n    \"exchange:\"\n        \"pair_blacklist\": [\n"
     if currency is None:
         string += "\"("
         for ind, item in enumerate(inputlist):
@@ -37,9 +37,10 @@ def createstring(inputlist, currency=None):
         return string
     for item in inputlist:
         if item is not inputlist[-1]:
-            string += "\"" + item + "/"+ currency + "\", \n"
+            string += "        \"" + item + "/"+ currency + "\", \n"
         if item is inputlist[-1]:
-            string += "\"" + item + "/"+ currency + "\"\n"
+            string += "        \"" + item + "/"+ currency + "\"\n"
+    string += "    ]\n}"
     return string
 
 # prints the list to a file
